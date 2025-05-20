@@ -7,15 +7,15 @@ df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
 df['target'] = iris.target
 
 print(df.head())
-#step -🤖 Step 3: Split Data into Train and Test
 
+#Split Data into Train and Test
 from sklearn.model_selection import train_test_split
 
 X = df.drop('target', axis=1)
 y = df['target']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-#step- 🧠 Step 4: Train All ML Algorithms
+#Train All ML Algorithms
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
@@ -41,7 +41,7 @@ for name, model in models.items():
 print("\nModel Accuracies:")
 for name, acc in results.items():
     print(f"{name}: {acc:.2f}")
-#📊 Step 5: Plot Confusion Matrices
+#Plot Confusion Matrices
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 
